@@ -2,6 +2,9 @@
 
 * {
     margin: 0;
+}
+
+body {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -58,7 +61,19 @@ a {
 }
 
 #showcase {
-    height: 25rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 380px;
+    gap: 25px;
+}
+
+#showcase img {
+    width: 280px;        
+    height: auto;        
+    object-fit: cover;   
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #differences {
@@ -92,11 +107,11 @@ button:hover {
 .card {
     color: #2c2c2c;
     margin-bottom: 1rem;
-    width: 15%;
+    width: 280px;
     padding: 10px;
     border-radius: 15px;
     display: flex;
-    background-color: #d8d8d8;
+    background-color: #e7e7e7;
     flex-direction: column;
     transition: all 0.3s ease; 
 }
@@ -119,7 +134,7 @@ button:hover {
 
 .rate {
     color: #0084ff;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
 }
 
 .price {
@@ -130,5 +145,4 @@ button:hover {
     display: flex;
     padding: 50px;
     justify-content: center;
-    font-size: 40px;
 }
