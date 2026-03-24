@@ -61,10 +61,6 @@ a {
     height: 25rem;
 }
 
-#products {
-    height: 15rem;
-}
-
 #differences {
     height: 30rem;
 }
@@ -87,7 +83,7 @@ button:hover {
     letter-spacing: 1px;
 }
 
-#product {
+#grid {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -96,11 +92,19 @@ button:hover {
 .card {
     color: #2c2c2c;
     margin-bottom: 1rem;
+    width: 15%;
+    padding: 10px;
+    border-radius: 15px;
     display: flex;
+    background-color: #d8d8d8;
     flex-direction: column;
 }
 
-image
+.image-product{
+    padding: 10px;
+    border-radius: 10px;
+}
+
 
 .product-name{
     font-weight: 600;
@@ -114,4 +118,8 @@ image
 
 .price {
     font-weight: 600;
+}
+
+#titule{
+    display: flex;
 }
