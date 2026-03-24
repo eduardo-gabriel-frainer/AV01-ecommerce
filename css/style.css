@@ -98,6 +98,12 @@ button:hover {
     display: flex;
     background-color: #d8d8d8;
     flex-direction: column;
+    transition: all 0.3s ease; 
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
 }
 
 .image-product {
