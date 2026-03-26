@@ -51,7 +51,8 @@ a {
 
 #about {
     display: flex;
-    margin: 0 auto;
+    margin: 40px auto;        
+    padding: 0 20px;    
     align-items: center;
     gap: 30px;
     width: 70%;
@@ -62,20 +63,62 @@ a {
     max-width: 400px;
 }
 
+#about img {
+    width: 500px;         
+    max-width: 100%;      
+}
+
+@media (max-width: 900px) {
+    #about {
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+        padding: 20px; 
+    }
+
+    #about img {
+        width: 100%;
+    }
+
+    #about p {
+        max-width: 100%;
+    }
+}
+
 #showcase {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 280px); 
     justify-content: center; 
-    align-items: center;     
-    height: 380px;
+    align-items: center;
     gap: 25px;
+    min-height: 380px;
 }
 
 #showcase img {
-    width: 280px;        
-    height: auto;        
-    object-fit: cover;   
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     padding: 10px;
     border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    #showcase {
+        grid-template-columns: repeat(2, 280px);
+    }
+}
+
+@media (max-width: 600px) {
+    #showcase {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #showcase img {
+        max-width: 280px;
+        margin: 0 auto; 
+    }
 }
 
 #differences {
