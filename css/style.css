@@ -193,3 +193,21 @@ button:hover {
     padding: 50px;
     justify-content: center;
 }
+
+.github-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}   
+
+#email {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#senai{
+    align-items: center;
+    align-items: center;
+    text-align: center;
+}
