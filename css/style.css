@@ -38,7 +38,7 @@ footer {
 
 footer .black-section {
     display: flex;
-    padding: 50px 10% 50px 10%;
+    padding: 50px 20% 50px 20%;
     justify-content: space-between;
 }
 
@@ -91,7 +91,7 @@ a {
     justify-content: center; 
     align-items: center;
     gap: 25px;
-    min-height: 380px;
+    min-height: 390px;
 }
 
 #showcase img {
@@ -194,20 +194,52 @@ button:hover {
     justify-content: center;
 }
 
-.github-links{
+#senai {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}   
+    align-items: center;
+    text-align: center;
+}
+
+#senai img {
+    width: 120px;
+    max-width: 100%;
+}
 
 #email {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    text-align: center;
 }
 
-#senai{
-    align-items: center;
-    align-items: center;
-    text-align: center;
+.github-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.github-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.github-links a:hover {
+    color: #4d79a1;
+}
+
+@media (max-width: 768px) {
+    .black-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; 
+        text-align: center;
+    }
+
+    #senai,
+    #email,
+    .github-links {
+        margin: 10px 0;
+    }
 }
