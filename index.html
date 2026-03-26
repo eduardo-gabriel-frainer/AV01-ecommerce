@@ -10,15 +10,28 @@
 </head>
 
 <body>
-    <header>
-        ET Store
-        <nav>
+    <header class="black-section">
+        <div class="logo">ET Store</div>
+        <nav class="nav-links">
             <a href="#about">Quem Somos</a>
             <a href="#grid">Produtos</a>
-            <a href="#differences">Quem Somos</a>
+            <a href="#differences">Diferenciais</a>
         </nav>
-        Entrar
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="login-btn">Entrar</div>
     </header>
+
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <nav class="modal-links">
+                <a href="#about">Quem Somos</a>
+                <a href="#grid">Produtos</a>
+                <a href="#differences">Diferenciais</a>
+            </nav>
+        </div>
+    </div>
 
     <main>
         <section id="about">
@@ -147,7 +160,8 @@
                 </div>
             </div>
             <div class="github-links">
-                <a href="https://github.com/eduardo-gabriel-frainer/AV01-ecommerce" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/eduardo-gabriel-frainer/AV01-ecommerce" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fas fa-code-branch"></i> Repositório do sistema
                 </a>
                 <a href="https://github.com/eduardo-gabriel-frainer" target="_blank" rel="noopener noreferrer">
@@ -160,5 +174,28 @@
         </section>
     </footer>
 </body>
+
+
+<script>
+    // Variável para controlar o estado (0 = desativado, 1 = ativado)
+let ativado = 0; // Inicialmente desativado
+
+// Seleção dos elementos
+const menuToggle = document.getElementById('menu-toggle');
+const modal = document.getElementById('menuModal');
+
+// Evento de clique no menu
+menuToggle.addEventListener('click', () => {
+    // Alternar a variável 'ativado' (se estava 0, vira 1; se estava 1, vira 0)
+    ativado = ativado === 0 ? 1 : 0;
+
+    // Se ativado == 1 (modo ativo), alterna a classe 'active' no modal
+    if (ativado === 1) {
+        modal.classList.add('active'); // Ativa o modal
+    } else {
+        modal.classList.remove('active'); // Desativa o modal
+    }
+});
+</script>
 
 </html>
