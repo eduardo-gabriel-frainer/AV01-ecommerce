@@ -12,13 +12,15 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 10% 20px 10%;
     background-color: black;
     color: #dfdfdf;
     z-index: 101;
     position: fixed;
     width: 100%;
     top: 0;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 nav a {
@@ -28,16 +30,6 @@ nav a {
 
 nav a:hover {
     transform: scale(1.1);
-}
-
-/* Estilo geral do header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #333;
-    color: white;
 }
 
 /* Logo */
@@ -120,7 +112,7 @@ a {
 
 #about {
     display: flex;
-    margin: 40px auto;        
+    margin: 50px auto;        
     padding: 0 20px;    
     align-items: center;
     gap: 30px;
@@ -188,10 +180,6 @@ a {
         max-width: 280px;
         margin: 0 auto; 
     }
-}
-
-#differences {
-    height: 30rem;
 }
 
 button {
@@ -285,7 +273,7 @@ button:hover {
 .modal {
     display: none;
     position: fixed;   
-    top: 60px;            
+    top: 55px;            
     right: 0;          
     right: 0;         
     width: 30%;   
@@ -326,7 +314,7 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .black-section {
+    footer .black-section {
         flex-direction: column;
         align-items: center;
         gap: 30px; 
@@ -338,4 +326,36 @@ button:hover {
     .github-links {
         margin: 10px 0;
     }
+}
+
+#differences {
+    padding: 0 20px 80px 40px;
+    text-align: center;
+}
+
+.dif-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.dif-card {
+    background: #111;
+    color: #dfdfdf;
+    padding: 25px;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.dif-card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.dif-card:hover {
+    transform: translateY(-5px);
+    background: #1a1a1a;
 }

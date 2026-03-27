@@ -11,6 +11,7 @@
 
 <body>
     <header class="black-section">
+        <div id="espacamento"></div>
         <div class="logo">ET Store</div>
         <nav class="nav-links">
             <a href="#about">Quem Somos</a>
@@ -21,6 +22,7 @@
             <i class="fas fa-bars"></i>
         </div>
         <div class="login-btn">Entrar</div>
+        <div id="espacamento"></div>
     </header>
 
     <div class="modal" id="menuModal">
@@ -140,6 +142,25 @@
         <section id="differences">
             <h1 class="titule">Diferenciais</h1>
 
+            <div class="dif-container">
+                <div class="dif-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Entrega rápida</h3>
+                    <p>Receba seus produtos com agilidade e segurança.</p>
+                </div>
+
+                <div class="dif-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Compra segura</h3>
+                    <p>Seus dados protegidos em todas as transações.</p>
+                </div>
+
+                <div class="dif-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Alta qualidade</h3>
+                    <p>Produtos selecionados com excelente padrão.</p>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -177,23 +198,19 @@
 
 
 <script>
-    // Variável para controlar o estado (0 = desativado, 1 = ativado)
-let ativado = 0; // Inicialmente desativado
 
-// Seleção dos elementos
+let ativado = 0;
+
 const menuToggle = document.getElementById('menu-toggle');
 const modal = document.getElementById('menuModal');
 
-// Evento de clique no menu
 menuToggle.addEventListener('click', () => {
-    // Alternar a variável 'ativado' (se estava 0, vira 1; se estava 1, vira 0)
     ativado = ativado === 0 ? 1 : 0;
 
-    // Se ativado == 1 (modo ativo), alterna a classe 'active' no modal
     if (ativado === 1) {
-        modal.classList.add('active'); // Ativa o modal
+        modal.classList.add('active');
     } else {
-        modal.classList.remove('active'); // Desativa o modal
+        modal.classList.remove('active');
     }
 });
 </script>
