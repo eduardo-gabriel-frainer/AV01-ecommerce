@@ -16,7 +16,7 @@
 
         <nav class="nav-links">
             <a href="/">Início</a>
-        </nav>  
+        </nav>
 
         <div class="menu-toggle" id="menu-toggle">
             <i class="fas fa-bars"></i>
@@ -36,17 +36,14 @@
 
     <main>
 
-        <!-- PRODUTO -->
         <section id="product-view">
 
             <div class="product-container">
 
-                <!-- IMAGEM -->
                 <div class="product-image">
                     <img src="/img/product01.webp" alt="">
                 </div>
 
-                <!-- INFO -->
                 <div class="product-info">
 
                     <h1 class="product-title">Produto 01</h1>
@@ -66,14 +63,12 @@
                         Perfeito para uso diário e com excelente custo-benefício.
                     </p>
 
-                    <!-- QUANTIDADE -->
                     <div class="quantity">
                         <button onclick="subtrairItem()">-</button>
                         <span id="quantidade">1</span>
                         <button onclick="adicionarItem()">+</button>
                     </div>
 
-                    <!-- AÇÕES -->
                     <div class="actions">
                         <button class="buy">Comprar agora</button>
                         <button class="cart">Adicionar ao carrinho</button>
@@ -87,7 +82,7 @@
 
     </main>
 
-   <footer>
+    <footer>
         <section class="black-section">
             <div id="senai">
                 <img src="/img/unisenai.png" alt="">
@@ -121,52 +116,52 @@
 </body>
 
 <script>
-let ativado = 0;
+    let ativado = 0;
 
-const menuToggle = document.getElementById('menu-toggle');
-const modal = document.getElementById('menuModal');
+    const menuToggle = document.getElementById('menu-toggle');
+    const modal = document.getElementById('menuModal');
 
-menuToggle.addEventListener('click', () => {
-    ativado = ativado === 0 ? 1 : 0;
+    menuToggle.addEventListener('click', () => {
+        ativado = ativado === 0 ? 1 : 0;
 
-    if (ativado === 1) {
-        modal.classList.add('active');
-    } else {
-        modal.classList.remove('active');
+        if (ativado === 1) {
+            modal.classList.add('active');
+        } else {
+            modal.classList.remove('active');
+        }
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    const produtos = {
+        "1": { nome: "Celular Positivo", preco: "R$ 1100,00" },
+        "2": { nome: "Notebook Gamer", preco: "R$ 2700,00" },
+        "3": { nome: "Fone de Ouvido Bluetooth", preco: "R$ 199,90" },
+        "4": { nome: "Mouse Gamer RGB", preco: "R$ 89,90" },
+        "5": { nome: "Teclado Mecânico", preco: "R$ 249,90" },
+        "6": { nome: "Monitor Full HD 24\"", preco: "R$ 799,90" }
+    };
+
+    const produto = produtos[id];
+
+    if (produto) {
+        document.querySelector(".product-title").textContent = produto.nome;
+        document.querySelector(".price").textContent = produto.preco;
     }
-});
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+    let contador = 1
 
-const produtos = {
-    "1": { nome: "Celular Positivo", preco: "R$ 1100,00" },
-    "2": { nome: "Notebook Gamer", preco: "R$ 2700,00" },
-    "3": { nome: "Fone de Ouvido Bluetooth", preco: "R$ 199,90" },
-    "4": { nome: "Mouse Gamer RGB", preco: "R$ 89,90" },
-    "5": { nome: "Teclado Mecânico", preco: "R$ 249,90" },
-    "6": { nome: "Monitor Full HD 24\"", preco: "R$ 799,90" }
-};
+    function adicionarItem() {
+        contador++
+        document.querySelector("#quantidade").textContent = contador;
+    }
 
-const produto = produtos[id];
-
-if (produto) {
-    document.querySelector(".product-title").textContent = produto.nome;
-    document.querySelector(".price").textContent = produto.preco;
-}
-
-let contador = 0
-
-function adicionarItem(){
-    contador++
-    document.querySelector("#quantidade").textContent = contador;
-}
-
-function subtrairItem(){
-    if(contador == 0) return
-    contador--
-    document.querySelector("#quantidade").textContent = contador;
-}
+    function subtrairItem() {
+        if (contador == 0) return
+        contador--
+        document.querySelector("#quantidade").textContent = contador;
+    }
 
 
 </script>

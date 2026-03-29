@@ -7,7 +7,9 @@
 main {
     flex: 1;
 }
-html, body {
+
+html,
+body {
     height: 100%;
 }
 
@@ -44,13 +46,11 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Logo */
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-/* Links de navegação */
 .nav-links {
     display: flex;
     gap: 15px;
@@ -80,8 +80,8 @@ nav a:hover {
 /* menu hamburger tela pequena */
 @media screen and (max-width: 768px) {
     .nav-links {
-        display: none; 
-        flex-direction: column; 
+        display: none;
+        flex-direction: column;
         gap: 10px;
         width: 100%;
         text-align: center;
@@ -90,7 +90,8 @@ nav a:hover {
     .nav-links.active {
         display: flex;
     }
-    .login-btn{
+
+    .login-btn {
         display: none;
     }
 
@@ -124,8 +125,8 @@ a {
 
 #about {
     display: flex;
-    margin: 50px auto;        
-    padding: 0 20px;    
+    margin: 50px auto;
+    padding: 0 20px;
     align-items: center;
     gap: 30px;
     width: 70%;
@@ -137,8 +138,8 @@ a {
 }
 
 #about img {
-    width: 500px;         
-    max-width: 100%;      
+    width: 500px;
+    max-width: 100%;
 }
 
 @media (max-width: 900px) {
@@ -146,7 +147,7 @@ a {
         flex-direction: column;
         text-align: center;
         width: 90%;
-        padding: 20px; 
+        padding: 20px;
     }
 
     #about img {
@@ -160,7 +161,9 @@ a {
 
 #showcase {
     display: grid;
-    grid-template-columns: repeat(3, 280px); 
+    padding-top: 20px;
+    padding-bottom: 20px;
+     grid-template-columns: repeat(3, 280px); 
     justify-content: center; 
     align-items: center;
     gap: 25px;
@@ -177,7 +180,7 @@ a {
 
 @media (max-width: 900px) {
     #showcase {
-        grid-template-columns: repeat(2, 280px);
+        grid-template-columns: repeat(1, 280px);
     }
 }
 
@@ -188,13 +191,14 @@ a {
         padding-bottom: 50px;
     }
 
-    #showcase img {
+      #showcase img {
         max-width: 280px;
         margin: 0 auto; 
     }
 }
 
-button, .btn {
+button,
+.btn {
     margin-top: 20px;
     padding: 10px 15px 10px 15px;
     background-color: rgb(83, 118, 194);
@@ -203,12 +207,13 @@ button, .btn {
     border: none;
 }
 
-button, .btn {
+button,
+.btn {
     letter-spacing: 0;
     transition: letter-spacing 0.3s ease;
 }
 
-.btn{
+.btn {
     text-align: center;
 }
 
@@ -238,7 +243,7 @@ button:hover {
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .image-product {
@@ -288,20 +293,20 @@ button:hover {
 
 .modal {
     display: none;
-    position: fixed;   
-    top: 55px;            
-    right: 0;          
-    right: 0;         
-    width: 30%;   
+    position: fixed;
+    top: 55px;
+    right: 0;
+    right: 0;
+    width: 30%;
     background-color: #333;
     z-index: 100;
-    height: 100vh;     
-    overflow: auto;     
+    height: 100vh;
+    overflow: auto;
     transition: all 0.3s ease;
 }
 
 .modal.active {
-    display: block;  
+    display: block;
 }
 
 .modal-links a {
@@ -309,7 +314,7 @@ button:hover {
     text-decoration: none;
 }
 
-.modal-links a{
+.modal-links a {
     padding: 10px;
 }
 
@@ -333,7 +338,7 @@ button:hover {
     footer .black-section {
         flex-direction: column;
         align-items: center;
-        gap: 30px; 
+        gap: 30px;
         text-align: center;
     }
 
@@ -378,7 +383,7 @@ button:hover {
 
 #product-view {
     margin-top: 100px;
-    padding: 40px 20%;
+    padding: 40px 25%;
 }
 
 .product-container {
@@ -386,8 +391,12 @@ button:hover {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     background-color: #e7e7e7;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
+}
+
+#quantidade{
+    padding-top: 20px;
 }
 
 .product-image {
@@ -444,7 +453,7 @@ button:hover {
 }
 
 .buy {
-    background-color: #004aad; 
+    background-color: #004aad;
     flex: 1;
 }
 
