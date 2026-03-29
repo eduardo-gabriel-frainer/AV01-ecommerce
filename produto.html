@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Produto</title>
+</head>
+
+<body>
+    <header class="black-section">
+        <div id="espacamento"></div>
+        <div class="logo">ET Store</div>
+
+        <nav class="nav-links">
+            <a href="/">Início</a>
+        </nav>  
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="login-btn">Entrar</div>
+        <div id="espacamento"></div>
+    </header>
+
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <nav class="modal-links">
+                <a href="/">Início</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- PRODUTO -->
+        <section id="product-view">
+
+            <div class="product-container">
+
+                <!-- IMAGEM -->
+                <div class="product-image">
+                    <img src="/img/product01.webp" alt="">
+                </div>
+
+                <!-- INFO -->
+                <div class="product-info">
+
+                    <h1 class="product-title">Produto 01</h1>
+
+                    <p class="rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </p>
+
+                    <p class="price">R$ 500,00</p>
+
+                    <p class="description">
+                        Produto de alta qualidade, ideal para quem busca desempenho e durabilidade.
+                        Perfeito para uso diário e com excelente custo-benefício.
+                    </p>
+
+                    <!-- QUANTIDADE -->
+                    <div class="quantity">
+                        <button onclick="subtrairItem()">-</button>
+                        <span id="quantidade">1</span>
+                        <button onclick="adicionarItem()">+</button>
+                    </div>
+
+                    <!-- AÇÕES -->
+                    <div class="actions">
+                        <button class="buy">Comprar agora</button>
+                        <button class="cart">Adicionar ao carrinho</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+   <footer>
+        <section class="black-section">
+            <div id="senai">
+                <img src="/img/unisenai.png" alt="">
+                <h3>Blumenau</h3>
+            </div>
+
+            <div id="email">
+                <h3>Nossos contatos</h3>
+                <div>
+                    eduardogfrainer@gmail.com
+                </div>
+                <div>
+                    taizalanga123@gmail.com
+                </div>
+            </div>
+            <div class="github-links">
+                <a href="https://github.com/eduardo-gabriel-frainer/AV01-ecommerce" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fas fa-code-branch"></i> Repositório do sistema
+                </a>
+                <a href="https://github.com/eduardo-gabriel-frainer" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Perfil Edu
+                </a>
+                <a href="https://github.com/eduardo-gabriel-frainer" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Perfil Taiza
+                </a>
+            </div>
+        </section>
+    </footer>
+
+</body>
+
+<script>
+let ativado = 0;
+
+const menuToggle = document.getElementById('menu-toggle');
+const modal = document.getElementById('menuModal');
+
+menuToggle.addEventListener('click', () => {
+    ativado = ativado === 0 ? 1 : 0;
+
+    if (ativado === 1) {
+        modal.classList.add('active');
+    } else {
+        modal.classList.remove('active');
+    }
+});
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const produtos = {
+    "1": { nome: "Celular Positivo", preco: "R$ 1100,00" },
+    "2": { nome: "Notebook Gamer", preco: "R$ 2700,00" },
+    "3": { nome: "Fone de Ouvido Bluetooth", preco: "R$ 199,90" },
+    "4": { nome: "Mouse Gamer RGB", preco: "R$ 89,90" },
+    "5": { nome: "Teclado Mecânico", preco: "R$ 249,90" },
+    "6": { nome: "Monitor Full HD 24\"", preco: "R$ 799,90" }
+};
+
+const produto = produtos[id];
+
+if (produto) {
+    document.querySelector(".product-title").textContent = produto.nome;
+    document.querySelector(".price").textContent = produto.preco;
+}
+
+let contador = 0
+
+function adicionarItem(){
+    contador++
+    document.querySelector("#quantidade").textContent = contador;
+}
+
+function subtrairItem(){
+    if(contador == 0) return
+    contador--
+    document.querySelector("#quantidade").textContent = contador;
+}
+
+
+</script>
+
+</html>
