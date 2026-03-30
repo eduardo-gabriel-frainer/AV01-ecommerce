@@ -135,12 +135,12 @@
     const id = params.get("id");
 
     const produtos = {
-        "1": { nome: "Celular Positivo", preco: "R$ 1100,00" },
-        "2": { nome: "Notebook Gamer", preco: "R$ 2700,00" },
-        "3": { nome: "Fone de Ouvido Bluetooth", preco: "R$ 199,90" },
-        "4": { nome: "Mouse Gamer RGB", preco: "R$ 89,90" },
-        "5": { nome: "Teclado Mecânico", preco: "R$ 249,90" },
-        "6": { nome: "Monitor Full HD 24\"", preco: "R$ 799,90" }
+        "1": { nome: "Celular Positivo", preco: "R$ 1100,00", img: "/img_product/celular_positivo.png" },
+        "2": { nome: "Notebook Gamer", preco: "R$ 2700,00", img: "/img_product/notebook_gamer.png" },
+        "3": { nome: "Fone de Ouvido Bluetooth", preco: "R$ 199,90", img: "/img_product/fone.jpg" },
+        "4": { nome: "Mouse Gamer RGB", preco: "R$ 89,90", img: "/img_product/mouse_gamer.jpg" },
+        "5": { nome: "Teclado Mecânico", preco: "R$ 249,90", img: "/img_product/teclado_mecanico.jpg" },
+        "6": { nome: "Monitor Full HD 24\"", preco: "R$ 799,90", img: "/img_product/monitor.webp" }
     };
 
     const produto = produtos[id];
@@ -148,6 +148,7 @@
     if (produto) {
         document.querySelector(".product-title").textContent = produto.nome;
         document.querySelector(".price").textContent = produto.preco;
+        document.querySelector(".product-image img").src = produto.img;
     }
 
     let contador = 1
