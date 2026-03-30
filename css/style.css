@@ -176,6 +176,12 @@ a {
     object-fit: cover;
     padding: 10px;
     border-radius: 10px;
+    transition: all 0.3s ease; 
+}
+
+#showcase img:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 900px) {
@@ -351,16 +357,18 @@ button:hover {
 }
 
 #differences {
-    padding: 0 20% 80px 20%;
+    padding: 0 20px 80px 20px;
     text-align: center;
 }
+
 .dif-container {
     display: grid;
     grid-template-areas: "left center right";
     grid-template-columns: 1fr 1.5fr 1fr;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 30px;
+     justify-content: center; 
+    gap: 25px;
+    max-width: 980px;
+    margin: 30px auto; 
 }
 
 .dif-card:nth-child(1) {
@@ -404,7 +412,9 @@ button:hover {
     }
 
     .dif-card {
+        max-width: 280px;  
         width: 100%;
+        margin: 0 auto;     
     }
 }
 
