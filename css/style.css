@@ -350,16 +350,28 @@ button:hover {
 }
 
 #differences {
-    padding: 0 20px 80px 40px;
+    padding: 0 20% 80px 20%;
     text-align: center;
 }
-
 .dif-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: "left center right";
+    grid-template-columns: 1fr 1.5fr 1fr;
     gap: 30px;
-    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 30px;
+}
+
+.dif-card:nth-child(1) {
+    grid-area: left;
+}
+
+.dif-card:nth-child(2) {
+    grid-area: center;
+}
+
+.dif-card:nth-child(3) {
+    grid-area: right;
 }
 
 .dif-card {
@@ -367,7 +379,6 @@ button:hover {
     color: #dfdfdf;
     padding: 25px;
     border-radius: 10px;
-    width: 250px;
     transition: 0.3s;
 }
 
@@ -379,6 +390,21 @@ button:hover {
 .dif-card:hover {
     transform: translateY(-5px);
     background: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+    .dif-container {
+        grid-template-areas:
+            "left"
+            "center"
+            "right";
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dif-card {
+        width: 100%;
+    }
 }
 
 #product-view {
